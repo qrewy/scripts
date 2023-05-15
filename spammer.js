@@ -26,7 +26,7 @@ async function checkTokens(token) {
     }
 }
 async function main() {
-    await checkTokens('NDg1NDI5NTAwNzU5NTA2OTU1.GBnpcj.nsZi6kV9kLPdRRVWtdXyBZxA6xX-28Fdl6Bqew')
+    await checkTokens('')
   }
   
   main()
