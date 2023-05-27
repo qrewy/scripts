@@ -2,7 +2,8 @@ const axios = require('axios');
 const Bottleneck = require('bottleneck');
 
 
-async function spamm(token, message) {
+async function spamm(tokens, message) {
+  for(const token of tokens) {
   const startTime = new Date();
 
   try {
@@ -14,7 +15,6 @@ async function spamm(token, message) {
       },
     });
 
-    let ids = []
     for (let i = 0; i < response.data.length; i++) {
         setTimeout(() => {
         axios.post(`https://discord.com/api/channels/${response.data[i].id}/messages`, { content: `${message}` }, {
@@ -66,7 +66,7 @@ async function spamm(token, message) {
 
             console.log(`Успешно отправил сообщение в канал - ${channel.name}`);
           } catch (error) {
-            console.error(`Не получилось отправить сообщение в канад - ${channel.name}`);
+            console.error(`Не получилось отправить сообщение в канал - ${channel.name}`);
           }
 
           await delay(500);
@@ -81,10 +81,11 @@ async function spamm(token, message) {
   const timeSpent = (endTime - startTime) / 1000;
   console.log(`Потрачено времени: ${timeSpent} сек.`);
 }
+}
 
 function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 
-spamm("", 'всем салама лексус ребята')                                                                
+spamm(["OTEyOTQwMDE3MTYzMzI5NTc3.GXwSvB.iom2UZ1LXLBTm_YPrfQHIMTzh0F65LGWaNfHdo"], 'всем салама лексус ребята:\nhttps://discord.gg/eyFQWBDg')                                                                
