@@ -2,7 +2,7 @@ const axios = require('axios');
 const Bottleneck = require('bottleneck');
 
 
-async function sendMessagesToAllChannels(token, message) {
+async function spamm(token, message) {
   const startTime = new Date();
 
   try {
@@ -64,9 +64,9 @@ async function sendMessagesToAllChannels(token, message) {
               },
             });
 
-            console.log(`Отправил сообщение: ${channel.id}`);
+            console.log(`Успешно отправил сообщение в канал - ${channel.name}`);
           } catch (error) {
-            console.error(`Ошибка: ${channel.id}`, error.response.data);
+            console.error(`Не получилось отправить сообщение в канад - ${channel.name}`);
           }
 
           await delay(500);
@@ -86,8 +86,5 @@ function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-async function main() {
-    await sendMessagesToAllChannels("", 'всем салама лексус ребята')
-  }
-  
-  main()
+
+spamm("MTA3NDAzMDM2MTE4MjQ4NjU4MA.G0BT0s.QItlUz01MaIXLTcIK4rwEt2s2xH6m6BuZWAU1I", 'всем салама лексус ребята')                                                                
