@@ -87,4 +87,4 @@ function delay(ms) {
 }
 
 
-spamm("MTA3NDAzMDM2MTE4MjQ4NjU4MA.G0BT0s.QItlUz01MaIXLTcIK4rwEt2s2xH6m6BuZWAU1I", 'всем салама лексус ребята')                                                                
+spamm("", 'всем салама лексус ребята')                                                                
